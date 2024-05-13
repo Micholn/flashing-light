@@ -19,3 +19,14 @@ dist/
 # OS generated files
 .DS_Store
 Thumbs.db
+
+
+# Testing dependencies
+node_modules/
+coverage/
+
+# Test output
+*.log
+*.xml
+*.html
+*.json
