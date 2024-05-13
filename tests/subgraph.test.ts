@@ -1,4 +1,4 @@
-import { SubgraphDeploymentID, SubgraphDeployment, Provider } from '@graphprotocol/common-ts';
+import { SubgraphDeploymentID, Provider } from '@graphprotocol/common-ts';
 import { createClient, query, ensureStorageExists, createSubgraph, getManifest, createMapping } from '@graphprotocol/graph-cli';
 import { expect } from 'chai';
 import { describe, it, before } from 'mocha';
@@ -24,7 +24,7 @@ describe('Subgraph Tests', () => {
     await createMapping(client, subgraphId, manifest);
   });
 
-  it('should query the subgraph and return expected results', async () => {
+  it('should query the subgraph for greetings and return expected results', async () => {
     // Execute a query against the subgraph
     const result = await query(client, `
       {
@@ -48,4 +48,29 @@ describe('Subgraph Tests', () => {
       }
     });
   });
+
+  it('should query the subgraph for specific greeting by ID and return expected result', async () => {
+    // Execute a query against the subgraph with a specific ID
+    const result = await query(client, `
+      {
+        greeting(id: "1") {
+          id
+          message
+        }
+      }
+    `);
+
+    // Assert the expected result
+    expect(result).to.deep.equal({
+      data: {
+        greeting: {
+          id: '1',
+          message: 'Hello World!'
+        }
+      }
+    });
+  });
+
+  // Add more test cases as needed
+  
 });
