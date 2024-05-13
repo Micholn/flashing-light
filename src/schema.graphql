@@ -1,4 +1,22 @@
-type ExampleEntity @entity {
-  id: ID!
+type Query {
+  greeting: String! 
+}
+
+type Mutation {
+  setGreeting(newGreeting: String!): String! 
+}
+
+type Subscription {
+  greetingChanged: GreetingChangeEvent! 
+}
+
+type GreetingChangeEvent {
+  setter: Address!
+  newGreeting: String!
+  premium: Boolean!
   value: BigInt!
+}
+
+type Address {
+  value: String!
 }
