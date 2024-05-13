@@ -1,0 +1,21 @@
+# Dependency directories
+node_modules/
+dist/
+
+# Environment variables
+.env
+
+# Build artifacts
+.tsbuildinfo
+*.js
+*.map
+
+# IDE and editor files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+
+# OS generated files
+.DS_Store
+Thumbs.db
