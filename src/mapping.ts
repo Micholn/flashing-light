@@ -1,9 +1,12 @@
-import { BigInt } from '@graphprotocol/graph-ts';
-import { YourContract, ExampleEntity } from '../generated/schema';
-import { ExampleEvent } from '../generated/YourContract/YourContract';
+import { BigInt, Address } from '@graphprotocol/graph-ts';
+import { GreetingChange } from './generated/YourContract/YourContract';
+import { GreetingEntity } from './generated/schema';
 
-export function handleExampleEvent(event: ExampleEvent): void {
-  let entity = new ExampleEntity(event.transaction.hash.toHex() + '-' + event.logIndex.toString());
+export function handleGreetingChange(event: GreetingChange): void {
+  let entity = new GreetingEntity(event.transaction.hash.toHex() + '-' + event.logIndex.toString());
+  entity.setter = event.params.greetingSetter;
+  entity.newGreeting = event.params.newGreeting;
+  entity.premium = event.params.premium;
   entity.value = event.params.value;
   entity.save();
 }
