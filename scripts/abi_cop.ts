@@ -3,7 +3,7 @@ import { createClient, ensureStorageExists, createSubgraph, getManifest, createM
 import { network } from 'hardhat';
 
 async function main() {
-  // Set up connection to The Graph node
+  // connection to The Graph node
   const client = createClient(network.provider);
 
   // Deploy the subgraph
