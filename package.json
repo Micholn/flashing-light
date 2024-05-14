@@ -4,17 +4,17 @@
   "main": "index.js",
   "scripts": {
     "abi_cop": "node --loader ts-node/esm --experimental-specifier-resolution=node scripts/abi_cop.ts",
-        "codegen": "graph codegen",
-        "build": "graph build",
-        "deploy": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ GITHUB_USERNAME/flashContract",
-        "local-create": "graph create --node http://localhost:8020/ scaffold-eth/flashContract",
-        "local-remove": "graph remove --node http://localhost:8020/ scaffold-eth/flashContract",
-        "local-deploy": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 scaffold-eth/flashContract",
-        "local-ship": "npm abi-copy && npm codegen && npm build --network localhost && npm local-deploy",
-        "test": "graph test",
-        "run-node": "cd graph-node && docker-compose up",
-        "stop-node": "cd graph-node && docker-compose down",
-        "clean-node": "rm -rf graph-node/data/"
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ GITHUB_USERNAME/flashContract",
+    "local-create": "graph create --node http://localhost:8020/ scaffold-eth/flashContract",
+    "local-remove": "graph remove --node http://localhost:8020/ scaffold-eth/flashContract",
+    "local-deploy": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 scaffold-eth/flashContract",
+    "local-ship": "npm abi-copy && npm codegen && npm build --network localhost && npm local-deploy",
+    "test": "graph test",
+    "run-node": "cd graph-node && docker-compose up",
+    "stop-node": "cd graph-node && docker-compose down",
+    "clean-node": "rm -rf graph-node/data/"
   },
   "keywords": [],
   "author": "",
@@ -30,6 +30,7 @@
     "typescript": "^5.4.5"
   },
   "dependencies": {
-    "@graphprotocol/common-ts": "^2.0.9"
+    "@graphprotocol/common-ts": "^2.0.9",
+    "hardhat": "^2.22.3"
   }
 }
