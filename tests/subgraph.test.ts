@@ -11,7 +11,7 @@ describe('Subgraph Tests', () => {
     client = createClient(network.provider);
     
     // Deploy the subgraph
-    const subgraphId = SubgraphDeploymentID.from('your/subgraph/id');
+    const subgraphId = SubgraphDeploymentID.from('/subgraph/id');
     await createSubgraph(client, subgraphId);
     
     // Ensure storage exists
@@ -71,6 +71,4 @@ describe('Subgraph Tests', () => {
     });
   });
 
-  // Add more test cases as needed
-  
 });
